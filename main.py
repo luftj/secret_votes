@@ -28,7 +28,7 @@ def store_poll(question, people):
 
     json_data = {"question" : question,
                 "people_hashes" : random.sample(people_hashed, len(people_hashed)),
-                #"people_names" : people,
+                "people_names" : people,
                 "num_yes" : 0,
                 "num_no" : 0,
                 "num_abstain" : 0,
@@ -128,11 +128,13 @@ def result_url(poll_id):
     num_abstain = vote_data["num_abstain"]
     num_votes = num_abstain + num_no + num_yes
     num_missing = len(vote_data["people_hashes"]) - num_votes
+    people = vote_data["people_names"]
 
     if num_missing < 0:
         print("something is fishy! more votes than registered voters!")
 
-    return render_template("result_view.html", motion=motion, num_votes=num_votes, num_yes=num_yes, num_no=num_no, num_abstain=num_abstain, num_missing=num_missing)
+    # return render_template("result_view.html", motion=motion, num_votes=num_votes, num_yes=num_yes, num_no=num_no, num_abstain=num_abstain, num_missing=num_missing)
+    return render_template("result_view_with_names.html", motion=motion, num_votes=num_votes, num_yes=num_yes, num_no=num_no, num_abstain=num_abstain, num_missing=num_missing, people=people)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",debug=True)
