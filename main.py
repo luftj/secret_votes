@@ -51,7 +51,9 @@ def submit_poll():
     people_list = people.replace("\r","").split("\n")
     print(people_list)
 
-    return "Successfully created poll with id %d" % store_poll(question, people_list)
+    poll_id = store_poll(question, people_list)
+    url = "http://localhost:5000/vote_%d" % poll_id
+    return render_template("poll_created.html", poll_id=poll_id, url=url)
 
 @app.route('/create', methods=["POST","GET"])
 def create_poll():
