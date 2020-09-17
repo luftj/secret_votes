@@ -16,7 +16,7 @@ def root():
 
 @app.route('/test')
 def test():
-	return "test success"
+	return "test success at " + request.url_root
 
 def store_poll(question, people):
     # create "unique" poll id
@@ -52,7 +52,7 @@ def submit_poll():
     print(people_list)
 
     poll_id = store_poll(question, people_list)
-    url = "http://localhost:5000/vote_%d" % poll_id
+    url = "%svote_%d" % (request.url_root, poll_id)
     return render_template("poll_created.html", poll_id=poll_id, url=url)
 
 @app.route('/create', methods=["POST","GET"])
