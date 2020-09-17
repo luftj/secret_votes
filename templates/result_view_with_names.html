@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <body>
+
+        <h1>Results for poll:</h1>
+
+        <label >Motion: {{motion}}</label><br><br>
+
+        <label >Number of votes: {{num_votes}}</label><br>
+        <label >Number Yay: {{num_yes}}</label><br>
+        <label >Number Nay: {{num_no}}</label><br>
+        <label >Number abstained: {{num_abstain}}</label><br>
+        <label >Number not voted: {{num_missing}}</label><br>
+        
+        <br>
+        <label> These people were eligible for voting:</label><br><br>
+
+        {% for item in people %}
+            <label> {{item}} </label><br/>
+        {% endfor %}
+    </body>
+</html>
