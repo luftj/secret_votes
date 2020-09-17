@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h1>Vote for poll:</h1>
+
+      <form action="submit_vote">
+         <label for="poll_id">poll ID:</label><br>
+         <input type="text" id="poll_id" name="poll_id" readonly="readonly" value="{{poll_id}}"><br><br>
+         
+         <label for="question">Motion:</label><br>
+         <label id="question" name="question">{{question}}</label><br><br>
+
+         <label for="options">Options:</label><br>
+         <input type="radio" id="yes" name="options" value="yes">
+         <label for="yes">Approve</label><br>
+         <input type="radio" id="no" name="options" value="no">
+         <label for="no">Reject</label><br>
+         <input type="radio" id="abstain" name="options" value="abstain">
+         <label for="abstain">abstain</label><br><br>
+
+         <label for="name">Your name:</label><br>
+         <input type="text" id="name" name="name"><br><br>
+         <input type="submit" name="submit" value="Submit" >
+      </form>
+      
+   </body>
+</html>
