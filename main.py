@@ -28,7 +28,7 @@ def store_poll(question, people):
 
     json_data = {"question" : question,
                 "people_hashes" : random.sample(people_hashed, len(people_hashed)),
-                "people_names" : people,
+                #"people_names" : people,
                 "num_yay" : 0,
                 "num_nay" : 0,
                 "num_abstain" : 0,
