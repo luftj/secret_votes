@@ -11,9 +11,9 @@ Requires
 
 ```$ python3 -m pip install -r requirements.txt ```
 
-for production host e.g. as uwsgi socket
+for production, host e.g. as uwsgi socket, see [flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/uwsgi/)
 
-for debugging run a test server with 
+for debugging, run a test server with 
 `$ python3 main.py`
 
 ## Usage

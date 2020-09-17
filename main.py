@@ -24,13 +24,13 @@ def store_poll(question, people):
     print("poll id", poll_id)
 
     # hash people for pseudonymisation
-    people_hashed = [hashlib.md5(p.encode("utf-8")).digest().decode("latin1") for p in people]
+    people_hashed = [hashlib.md5(p.encode("utf-8")).hexdigest() for p in people]
 
     json_data = {"question" : question,
                 "people_hashes" : random.sample(people_hashed, len(people_hashed)),
                 #"people_names" : people,
-                "num_yay" : 0,
-                "num_nay" : 0,
+                "num_yes" : 0,
+                "num_no" : 0,
                 "num_abstain" : 0,
                 "already_voted" : [],
                 "result_visible_time" : None}
@@ -89,7 +89,7 @@ def submit_vote():
     with open("data/poll_%s.json" % poll_id, encoding="utf-8") as file:
         vote_data = json.load(file)
 
-    hashed_name = hashlib.md5(name.encode("utf-8")).digest().decode("latin1")
+    hashed_name = hashlib.md5(name.encode("utf-8")).hexdigest()
     print(hashed_name)
     is_eligible = hashed_name in vote_data["people_hashes"]
     if not is_eligible:
