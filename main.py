@@ -1,6 +1,6 @@
 import json
 import random
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import hashlib
 
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return redirect(url_for('create'))
+    return redirect(url_for('create_poll'))
 
 @app.route('/test')
 def test():
@@ -16,7 +16,7 @@ def test():
 
 def store_poll(question, people):
     # create "unique" poll id
-    poll_id = hash(question+"".join(people))
+    poll_id = hashlib.md5((question+"".join(people)).encode("utf-8")).hexdigest()
     print("poll id", poll_id)
 
     # hash people for pseudonymisation
@@ -31,7 +31,7 @@ def store_poll(question, people):
                 "already_voted" : [],
                 "result_visible_time" : None}
 
-    with open("data/poll_%d.json" % poll_id,"w",encoding="utf-8") as file:
+    with open("data/poll_%s.json" % poll_id,"w",encoding="utf-8") as file:
         json.dump(json_data, file)
     return poll_id
 
@@ -48,7 +48,7 @@ def submit_poll():
     print(people_list)
 
     poll_id = store_poll(question, people_list)
-    url = "%svote_%d" % (request.url_root, poll_id)
+    url = "%svote_%s" % (request.url_root, poll_id)
     return render_template("poll_created.html", poll_id=poll_id, url=url)
 
 @app.route('/create', methods=["POST","GET"])
