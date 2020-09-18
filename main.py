@@ -8,11 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    x= float(request.args.get('pos_x').replace(",","."))
-    y= float(request.args.get('pos_y').replace(",","."))
-    t= request.args.get('type')
-    print('success! got %s at (%f,%f)' % (t,x,y))
-    return 'success! got %s at (%f,%f)' % (t,x,y)
+    return redirect(url_for('create'))
 
 @app.route('/test')
 def test():
