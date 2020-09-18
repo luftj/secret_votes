@@ -8,10 +8,13 @@ a simple webserver for secret voting.
 
 Requires
 * Python3
+* (docker)
 
 ```$ python3 -m pip install -r requirements.txt ```
 
-for production, host e.g. as uwsgi socket, see [flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/uwsgi/)
+For production, host e.g. as uwsgi socket, see [flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/uwsgi/).
+
+Alternatively, you can run the application inside a docker container with the handy script `start.sh`. Might want to change the port from 8080 to something that is available on your machine.
 
 for debugging, run a test server with 
 `$ python3 main.py`
