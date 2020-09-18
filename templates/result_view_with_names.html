@@ -13,10 +13,10 @@
         <label >Number not voted: {{num_missing}}</label><br>
         
         <br>
-        <label> These people were eligible for voting:</label><br><br>
+        <label> These people were eligible for voting (total: {{num_votes+num_missing}}):</label><br><br>
 
-        {% for item in people %}
-            <label> {{item}} </label><br/>
+        {% for email,votes in people %}
+            <label> {{email}} (votes: {{votes}}) </label><br/>
         {% endfor %}
     </body>
 </html>

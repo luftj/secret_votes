@@ -36,7 +36,6 @@ To see the results:
 
 ## To do
 * exception handling
-* display result link after submitting vote
 * prettier front end
 * block result viewing for specific time or until number of votes reached
 * cryptographically hide names, so they can't be matched to hashes by the server admin

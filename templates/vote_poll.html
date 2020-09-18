@@ -4,7 +4,7 @@
    
       <h1>Vote for poll:</h1>
 
-      <form action="submit_vote">
+      <form action="submit_vote" method = "post">
          <label for="poll_id">poll ID:</label><br>
          <input type="text" id="poll_id" name="poll_id" readonly="readonly" value="{{poll_id}}"><br><br>
          
@@ -16,11 +16,11 @@
          <label for="yes">Approve</label><br>
          <input type="radio" id="no" name="options" value="no">
          <label for="no">Reject</label><br>
-         <input type="radio" id="abstain" name="options" value="abstain">
+         <input type="radio" id="abstain" name="options" value="abstain" checked>
          <label for="abstain">abstain</label><br><br>
 
-         <label for="name">Your name:</label><br>
-         <input type="text" id="name" name="name"><br><br>
+         <label for="name">Your id:</label><br>
+         <input type="text" id="name" name="name" readonly="readonly" value="{{user}}"><br><br>
          <input type="submit" name="submit" value="Submit" >
       </form>
       

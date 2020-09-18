@@ -4,13 +4,16 @@
    
       <h1>Create new poll:</h1>
 
-      <form action="submit_new_poll">
-        <label for="question">Motion:</label><br>
-        <input type="text" id="question" name="question"><br><br>
+      <form action="submit_new_poll" method = "post">
+         <label for="question">Motion:</label><br>
+         <input type="text" id="question" name="question" value={{question}}><br><br>
 
-        <label for="people">Eligible voters:</label><br>
-        <textarea rows="50" cols="50" name="people">Enter one person per line...</textarea><br>
-        <input type="submit" name="submit" value="Submit" >
+         <label for="people">Eligible voters:</label><br>
+         {% if invalid_mail %}
+            <label class="error" >You entered an invalid e-mail address</label><br>
+         {% endif %}
+         <textarea rows="50" cols="50" name="people">{{people}}</textarea><br>
+         <input type="submit" name="submit" value="Submit" >
       </form>
       
    </body>

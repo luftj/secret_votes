@@ -19,4 +19,7 @@ RUN chmod 0644 /etc/cron.d/cronjobs
 RUN crontab /etc/cron.d/cronjobs
 
 # Create the log file
-RUN touch /var/log/cron.log
+RUN touch /app/cron.log
+
+# expose SMTP port
+EXPOSE 587
