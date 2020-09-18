@@ -182,9 +182,7 @@ def send_email(recipient, poll_url, question, num_votes=1):
 
     email_hash = hashlib.md5((recipient).encode("utf-8")).hexdigest() # todo: this can be reconstructed, add salt 
 
-    message = """From: Voting System <%s>
-    To: %s
-    Subject: You have been invited to participate to a poll regarding %s
+    message = """From: Voting System <%s>\r\nTo: %s\r\nSubject: You have been invited to participate to a poll regarding %s\r\n
 
     click here to submit your vote: %s?user=%s
     you have %d vote(s).
