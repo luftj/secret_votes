@@ -4,11 +4,6 @@ FROM tiangolo/uwsgi-nginx-flask:python3.8
 RUN apt-get update
 RUN apt-get -y install cron
 
-COPY . /app
-
-# give exec rights to delete script in cronjob
-RUN chmod 0744 /app/delete_old_polls.sh
-
 # Copy cron file to the cron.d directory
 COPY cronjobs /etc/cron.d/cronjobs
 
@@ -23,3 +18,8 @@ RUN touch /app/cron.log
 
 # expose SMTP port
 EXPOSE 587
+
+COPY . /app
+
+# give exec rights to delete script in cronjob
+RUN chmod 0744 /app/delete_old_polls.sh

@@ -19,7 +19,9 @@ def test():
 
 def store_poll(question, email_addresses):
     # create "unique" poll id
-    poll_id = hashlib.md5((question+"".join(email_addresses)).encode("utf-8")).hexdigest()
+    poll_id = hashlib.md5((question + "".join(email_addresses) + str(random.randint(1,999))).encode("utf-8")).hexdigest()
+    # this poll might already exist, so seed with random number
+
     print("poll id", poll_id)
 
     # hash people for pseudonymisation

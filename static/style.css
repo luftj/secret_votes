@@ -1,0 +1,18 @@
+html {
+    font-family: sans-serif;
+    background: #eee;
+    padding: 1rem; 
+}
+
+.error {
+    color: red;
+}
+
+textarea {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+input[readonly] {
+    visibility: hidden;
+}
