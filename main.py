@@ -134,9 +134,12 @@ def submit_vote():
     url =  "%sresult_%s?user=%s" % (request.url_root, poll_id, hashed_name)
     return render_template("vote_submitted.html", result_url=url)
 
-@app.route("/result_<poll_id>")
+@app.route("/result_<poll_id>", methods=["GET,"POST"])
 def result_url(poll_id):
-    user = request.args.get("user", None)
+    if request.method == 'POST':
+        user = request.form.get('user', None)
+    else:
+        user = request.args.get("user", None)
     # get data
     with open("data/poll_%s.json" % poll_id, encoding="utf-8") as file:
         vote_data = json.load(file)
