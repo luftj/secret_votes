@@ -5,8 +5,12 @@ import hashlib
 from os import environ
 import smtplib
 import re
+from flask_babel import Babel, _
+
 
 app = Flask(__name__)
+babel = Babel(app)
+LANGUAGES = ['en', 'de']
 
 @app.route('/')
 def root():
@@ -16,6 +20,11 @@ def root():
 def test():
     send_email("recipient@test.com","url","question?")
     return "test success at " + request.url_root + " with " + environ.get('SMTP_HOST') + " " + environ.get('SMTP_FROM')
+
+@babel.localeselector
+def get_locale():
+    # return request.accept_languages.best_match(LANGUAGES)
+    return "de"
 
 def store_poll(question, email_addresses):
     # create "unique" poll id
@@ -75,7 +84,7 @@ def submit_poll():
 @app.route('/create', methods=["POST","GET"])
 def create_poll():
     # show creation site
-    return render_template("create_new_poll.html", people="Enter one email address per line...")
+    return render_template("create_new_poll.html", people=_("Enter one email address per line..."))
 
 @app.route('/vote_<poll_id>', methods=["POST","GET"])
 def vote(poll_id):
@@ -153,12 +162,16 @@ def result(poll_id):
         user = request.args.get("user", None)
 
     # get data
-    with open("data/poll_%s.json" % poll_id, encoding="utf-8") as file:
-        vote_data = json.load(file)
+    try:
+        with open("data/poll_%s.json" % poll_id, encoding="utf-8") as file:
+            vote_data = json.load(file)
+    except FileNotFoundError as e:
+        print(e)
+        return render_template("error.html", error_type="invalid_poll_id")
 
     # only show results, when user has already voted
     if not user in vote_data["already_voted"]:
-        return "you can only see results if you have already voted!"
+        return _("you can only see results if you have already voted!") # todo: return to vote
 
     motion = vote_data["question"]
     num_yes = vote_data["num_yes"]
@@ -205,11 +218,14 @@ def send_email(recipient, poll_url, question, num_votes=1):
 
     email_hash = hashlib.md5((recipient).encode("utf-8")).hexdigest() # todo: this can be reconstructed, add salt 
 
-    message = """From: Voting System <%s>\r\nTo: %s\r\nSubject: You have been invited to participate to a poll regarding %s\r\n
+    # todo: the language of the email is now the language of the poll creator -> determine from TLD?
+    message = """From: Voting System <%s>\r\nTo: %s\r\nSubject: %s %s\r\n
 
-    click here to submit your vote: %s?user=%s
-    you have %d vote(s).
-    """ % (environ.get('SMTP_FROM'), recipient, question, poll_url, email_hash, num_votes)
+    %s %s?user=%s
+    %s %d %s.
+    """ % (environ.get('SMTP_FROM'), recipient, _("You have been invited to participate to a poll regarding"), question, 
+            _("Click here to submit your vote:"), poll_url, email_hash,
+            _("You have"), num_votes, _("vote(s)"))
 
     try:
         with smtplib.SMTP(environ.get('SMTP_HOST'), environ.get('SMTP_PORT')) as smtpObj:

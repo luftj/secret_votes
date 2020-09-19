@@ -3,21 +3,21 @@
    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
    <body>
    
-      <h1>Create new poll:</h1>
+      <h1>{{_("Create new poll:")}}</h1>
 
       <form action="submit_new_poll" method = "post">
-         <label for="question">Motion:</label><br>
+         <label for="question">{{ _("Motion:") }}</label><br>
          {% if invalid_question %}
-            <label class="error" >Please enter what to vote on</label><br>
+            <label class="error" >{{_("Please enter what to vote on")}}</label><br>
          {% endif %}
          <input type="text" id="question" name="question" value={{question}}><br><br>
 
-         <label for="people">Eligible voters (max. 150):</label><br>
+         <label for="people">{{_("Eligible voters (max. 150):")}}</label><br>
          {% if invalid_mail %}
-            <label class="error" >You entered an invalid e-mail address</label><br>
+            <label class="error" >{{_("You entered an invalid e-mail address")}}</label><br>
          {% endif %}
          <textarea rows="150" cols="50" name="people">{{people}}</textarea><br>
-         <input type="submit" name="submit" value="Submit" >
+         <input type="submit" name="submit" value="{{_("Submit")}}" >
       </form>
       
    </body>

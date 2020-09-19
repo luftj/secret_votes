@@ -21,5 +21,7 @@ EXPOSE 587
 
 COPY . /app
 
+RUN python -m pip install -r /app/requirements.txt
+
 # give exec rights to delete script in cronjob
 RUN chmod 0744 /app/delete_old_polls.sh

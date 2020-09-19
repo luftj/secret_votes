@@ -4,16 +4,16 @@
 
     <body>
 
-        <h1>Something went wrong!</h1>
+        <h1>{{_("Something went wrong!")}}</h1>
 
         {% if error_type=="invalid_poll_id" %}
-            <label class="error">Could not find a poll with this ID!</label>
+            <label class="error">{{_("Could not find a poll with this ID!")}}</label>
             <br>
         {% elif error_type=="invalid_user_id" %}
-            <label class="error">This user is not eligible for voting here!</label>
+            <label class="error">{{_("This user is not eligible for voting here!")}}</label>
             <br>
         {% elif error_type=="already_voted" %}
-            <label class="error">You already voted for this poll!</label>
+            <label class="error">{{_("You already voted for this poll!")}}</label>
             <br>
         {% endif %}
 

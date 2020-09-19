@@ -3,21 +3,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <body>
 
-        <h1>Results for poll:</h1>
+        <h1>{{_("Results for poll:")}}</h1>
 
-        <label >Motion: {{motion}}</label><br><br>
+        <label >{{_("Motion:")}} {{motion}}</label><br><br>
 
-        <label >Number of votes: {{num_votes}}</label><br>
-        <label >Number Yay: {{num_yes}}</label><br>
-        <label >Number Nay: {{num_no}}</label><br>
-        <label >Number abstained: {{num_abstain}}</label><br>
-        <label >Number not voted: {{num_missing}}</label><br>
+        <label >{{_("Number of votes:")}} {{num_votes}}</label><br>
+        <label >{{_("Number Yay:")}} {{num_yes}}</label><br>
+        <label >{{_("Number Nay:")}} {{num_no}}</label><br>
+        <label >{{_("Number abstained:")}} {{num_abstain}}</label><br>
+        <label >{{_("Number not voted:")}} {{num_missing}}</label><br>
         
         <br>
-        <label> These people were eligible for voting (total votes: {{num_votes+num_missing}}):</label><br><br>
+        <label> {{_("These people were eligible for voting (total votes:")}} {{num_votes+num_missing}}):</label><br><br>
 
         {% for email,votes in people %}
-            <label> {{email}} (votes: {{votes}}) </label><br/>
+            <label> {{email}} ({{_("votes")}}: {{votes}}) </label><br/>
         {% endfor %}
     </body>
 </html>

@@ -3,8 +3,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <body>
 
-        <h1>Your vote has been registered!</h1>
-        <a href="{{result_url}}">Go to results</a>
+        <h1>{{_("Your vote has been registered!")}}</h1>
+        <a href="{{result_url}}">{{_("Go to results")}}</a>
         
     </body>
 </html>

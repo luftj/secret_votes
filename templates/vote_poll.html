@@ -3,25 +3,25 @@
    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
    <body>
    
-      <h1>Vote for poll:</h1>
+      <h1>{{ _("Vote for poll:") }}</h1>
 
       <form action="submit_vote" method = "post">
          
-         <label for="question">Motion:</label><br>
+         <label for="question">{{_("Motion:")}}</label><br>
          <label id="question" name="question">{{question}}</label><br><br>
 
-         <label for="options">Options:</label><br>
+         <label for="options">{{_("Options:")}}</label><br>
          <input type="radio" id="yes" name="options" value="yes">
-         <label for="yes">Approve</label><br>
+         <label for="yes">{{_("Approve")}}</label><br>
          <input type="radio" id="no" name="options" value="no">
-         <label for="no">Reject</label><br>
+         <label for="no">{{_("Reject")}}</label><br>
          <input type="radio" id="abstain" name="options" value="abstain" checked>
-         <label for="abstain">abstain</label><br><br>
+         <label for="abstain">{{_("abstain")}}</label><br><br>
 
          <input type="text" id="poll_id" name="poll_id" readonly="readonly" value="{{poll_id}}"><br><br>
          <input type="text" id="name" name="name" readonly="readonly" value="{{user}}"><br><br>
-         
-         <input type="submit" name="submit" value="Submit" >
+
+         <input type="submit" name="submit" value="{{_("Submit vote")}}" >
       </form>
       
    </body>

@@ -35,7 +35,7 @@ To see the results:
 `http://localhost:5000/result_<poll_id>`
 
 ## To do
-* exception handling
+* localisation
 * prettier front end
 * block result viewing for specific time or until number of votes reached
 * cryptographically hide names, so they can't be matched to hashes by the server admin
