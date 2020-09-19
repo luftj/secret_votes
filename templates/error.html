@@ -4,11 +4,11 @@
    
         <h1>Something went wrong!</h1>
 
-        {% if error_type="invalid_poll_id" %}
+        {% if error_type=="invalid_poll_id" %}
             <label class="error" >Could not find a poll with this ID!</label><br>
-        {% elif error_type="invalid_user_id" %}
+        {% elif error_type=="invalid_user_id" %}
             <label class="error" >This user is not eligible for voting here!</label><br>
-        {% elif error_type="already_voted" %}
+        {% elif error_type=="already_voted" %}
             <label class="error" >You already voted for this poll!</label><br>
         {% endif %}
       
