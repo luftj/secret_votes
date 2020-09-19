@@ -6,6 +6,9 @@
 
       <form action="submit_new_poll" method = "post">
          <label for="question">Motion:</label><br>
+         {% if invalid_question %}
+            <label class="error" >Please enter what to vote on</label><br>
+         {% endif %}
          <input type="text" id="question" name="question" value={{question}}><br><br>
 
          <label for="people">Eligible voters:</label><br>
