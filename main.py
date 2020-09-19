@@ -41,8 +41,12 @@ def store_poll(question, people):
 
 @app.route('/submit_new_poll', methods=["POST","GET"])
 def submit_poll():
-    question = request.args.get("question",None)
-    people = request.args.get("people",None)
+    if request.method == 'POST':
+        question = request.form.get('question', None)
+        people = request.form.get('people', None)
+    else:
+        question = request.args.get("question",None)
+        people = request.args.get("people",None)
     # todo: handle invalid/None
     # todo: handle empty
     print(question)
