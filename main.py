@@ -85,7 +85,7 @@ def vote(poll_id):
     # get question
     try:
         with open("data/poll_%s.json" % poll_id) as file:
-            vote_data = json.load(file)["question"]
+            vote_data = json.load(file)
             question = vote_data["question"]
     except FileNotFoundError as e:
         print(e)
