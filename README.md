@@ -27,16 +27,24 @@ To create a poll:
 the people's names that are eligible for voting must be seperated with a new line.
 
 To vote:
-`http://localhost:5000/vote_<poll_id>`
+`http://localhost:5000/vote_<poll_id>?user=<user_id>`
 
 The name you enter must exactly match one of the names entered before to authenticate you.
 
 To see the results:
-`http://localhost:5000/result_<poll_id>`
+`http://localhost:5000/result_<poll_id>?user=<user_id>`
+
+You are only allowed to see the results, after you have given a vote.
+
+## Features
+
+* sends emails via SMTP to invite all users to vote!
+* Full localisation. To add a new language, run `pybabel init -i messages.pot -d app/translations -l <iso-code>`, edit the new .pot file in `app/translations/<iso_code>/LC_MESSAGES/messages.po` and create a pull request!
 
 ## To do
-* localisation
 * prettier front end
 * block result viewing for specific time or until number of votes reached
-* cryptographically hide names, so they can't be matched to hashes by the server admin
 * salt email hashes so they can't be found from email alone
+* set language of email by looking at tld
+* add observers, that can view results without voting
+* possibility to change the possible answers for the vote

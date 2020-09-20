@@ -19,9 +19,11 @@ RUN touch /app/cron.log
 # expose SMTP port
 EXPOSE 587
 
+# install python requirements
 COPY ./requirements.txt /app/requirements.txts
 RUN python -m pip install -r /app/requirements.txt
 
+# moce application data
 COPY ./app/ /app
 
 # give exec rights to delete script in cronjob
