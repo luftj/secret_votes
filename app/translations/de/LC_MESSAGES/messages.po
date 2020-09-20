@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-19 17:59+0200\n"
+"POT-Creation-Date: 2020-09-20 17:29+0200\n"
 "PO-Revision-Date: 2020-09-19 17:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,140 +18,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: main.py:87
+#: app/main.py:87
 msgid "Enter one email address per line..."
 msgstr "Bitte eine E-Mail-Adresse per Zeile eingeben..."
 
-#: main.py:174
+#: app/main.py:174
 msgid "you can only see results if you have already voted!"
 msgstr "Sie können die Umfrageergebnisse erst nach einer Stimmenabgabe einsehen."
 
-#: main.py:226
+#: app/main.py:226
 msgid "You have been invited to participate to a poll regarding"
 msgstr "Sie wurden eingeladen, an folgender Abstimmung teilzunehmen:"
 
-#: main.py:227
+#: app/main.py:227
 msgid "Click here to submit your vote:"
 msgstr "Geben Sie hier Ihre Stimme ab:"
 
-#: main.py:228
+#: app/main.py:228
 msgid "You have"
 msgstr "Sie haben"
 
-#: main.py:228
+#: app/main.py:228
 msgid "vote(s)"
 msgstr "Stimme(n)"
 
-#: templates/create_new_poll.html:6
+#: app/templates/create_new_poll.html:6
 msgid "Create new poll:"
 msgstr "Neue Abstimmung erstellen:"
 
-#: templates/create_new_poll.html:9 templates/result_view_with_names.html:8
-#: templates/vote_poll.html:10
+#: app/templates/create_new_poll.html:9
+#: app/templates/result_view_with_names.html:8 app/templates/vote_poll.html:10
 msgid "Motion:"
 msgstr "Frage:"
 
-#: templates/create_new_poll.html:11
+#: app/templates/create_new_poll.html:11
 msgid "Please enter what to vote on"
 msgstr "Bitte geben Sie eine Frage ein"
 
-#: templates/create_new_poll.html:15
+#: app/templates/create_new_poll.html:15
 msgid "Eligible voters (max. 150):"
 msgstr "E-Mail Adressen aller Teilnehmer (max. 150):"
 
-#: templates/create_new_poll.html:17
+#: app/templates/create_new_poll.html:17
 msgid "You entered an invalid e-mail address"
 msgstr "Sie haben eine ungültige E-Mail Adresse eingegeben"
 
-#: templates/create_new_poll.html:20
+#: app/templates/create_new_poll.html:20
 msgid "Submit"
 msgstr "Erstellen"
 
-#: templates/error.html:7
+#: app/templates/error.html:7
 msgid "Something went wrong!"
 msgstr "Da ist etwas schief gelaufen!"
 
-#: templates/error.html:10
+#: app/templates/error.html:10
 msgid "Could not find a poll with this ID!"
 msgstr "Diese Abstimmung wurde nicht gefunden!"
 
-#: templates/error.html:13
+#: app/templates/error.html:13
 msgid "This user is not eligible for voting here!"
 msgstr "Dieser Benutzer darf hier nicht abstimmen!"
 
-#: templates/error.html:16
+#: app/templates/error.html:16
 msgid "You already voted for this poll!"
 msgstr "Sie haben bereits für diese Umfrage abgestimmt!"
 
-#: templates/poll_created.html:6
+#: app/templates/poll_created.html:6
 msgid "Your poll has been created!"
 msgstr "Ihre Abstimmung wurde erfolgreich erstellt!"
 
-#: templates/poll_created.html:7
+#: app/templates/poll_created.html:7
 msgid "Emails have been sent to all voters."
 msgstr "Alle Teilnehmer haben eine E-Mail erhalten"
 
-#: templates/result_view_with_names.html:6
+#: app/templates/result_view_with_names.html:6
 msgid "Results for poll:"
 msgstr "Ergebnisse der Abstimmung:"
 
-#: templates/result_view_with_names.html:10
+#: app/templates/result_view_with_names.html:10
 msgid "Number of votes:"
 msgstr "Anzahl der Gesamtstimmen:"
 
-#: templates/result_view_with_names.html:11
+#: app/templates/result_view_with_names.html:11
 msgid "Number Yay:"
 msgstr "Anzahl dafür:"
 
-#: templates/result_view_with_names.html:12
+#: app/templates/result_view_with_names.html:12
 msgid "Number Nay:"
 msgstr "Anzahl dagegen:"
 
-#: templates/result_view_with_names.html:13
+#: app/templates/result_view_with_names.html:13
 msgid "Number abstained:"
 msgstr "Anzahl der Enthaltungen:"
 
-#: templates/result_view_with_names.html:14
+#: app/templates/result_view_with_names.html:14
 msgid "Number not voted:"
 msgstr "Anzahl der nicht abgegebenen Stimmen:"
 
-#: templates/result_view_with_names.html:17
+#: app/templates/result_view_with_names.html:17
 msgid "These people were eligible for voting (total votes:"
 msgstr "Dies waren die stimmberechtigten Teilnehmer (Gesamt:"
 
-#: templates/result_view_with_names.html:20
+#: app/templates/result_view_with_names.html:20
 msgid "votes"
 msgstr "Stimmen"
 
-#: templates/vote_poll.html:6
+#: app/templates/vote_poll.html:6
 msgid "Vote for poll:"
 msgstr "Geben Sie Ihre Stimme ab:"
 
-#: templates/vote_poll.html:13
+#: app/templates/vote_poll.html:13
 msgid "Options:"
 msgstr "Stimmmöglichkeiten:"
 
-#: templates/vote_poll.html:15
+#: app/templates/vote_poll.html:15
 msgid "Approve"
 msgstr "Zustimmen"
 
-#: templates/vote_poll.html:17
+#: app/templates/vote_poll.html:17
 msgid "Reject"
 msgstr "Ablehnen"
 
-#: templates/vote_poll.html:19
+#: app/templates/vote_poll.html:19
 msgid "abstain"
 msgstr "Enthalten"
 
-#: templates/vote_poll.html:24
+#: app/templates/vote_poll.html:24
 msgid "Submit vote"
 msgstr "Stimme abgeben"
 
-#: templates/vote_submitted.html:6
+#: app/templates/vote_submitted.html:6
 msgid "Your vote has been registered!"
 msgstr "Ihre Stimme wurde entgegen genommen!"
 
-#: templates/vote_submitted.html:7
+#: app/templates/vote_submitted.html:7
 msgid "Go to results"
 msgstr "Zu den Ergebnissen"
 

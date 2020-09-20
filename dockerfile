@@ -19,9 +19,10 @@ RUN touch /app/cron.log
 # expose SMTP port
 EXPOSE 587
 
-COPY . /app
-
+COPY ./requirements.txt /app/requirements.txts
 RUN python -m pip install -r /app/requirements.txt
+
+COPY ./app/ /app
 
 # give exec rights to delete script in cronjob
 RUN chmod 0744 /app/delete_old_polls.sh
