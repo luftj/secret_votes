@@ -23,8 +23,7 @@ def test():
 
 @babel.localeselector
 def get_locale():
-    # return request.accept_languages.best_match(LANGUAGES)
-    return "de"
+    return request.accept_languages.best_match(LANGUAGES)
 
 def store_poll(question, email_addresses):
     # create "unique" poll id
@@ -66,6 +65,7 @@ def submit_poll():
     print(question)
     if not people:
         # no emails provided -> error msg and repeat
+        # todo: this splits question, when there is a space!
         return render_template("create_new_poll.html", invalid_mail=True, question=question, people=people)
 
     # strip whitespace from emails and split to list
