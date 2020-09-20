@@ -8,6 +8,8 @@ a simple webserver for secret voting.
 
 Requires
 * Python3
+* flask
+* flask-babel
 * (docker)
 
 For production, host e.g. as uwsgi socket, see [flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/uwsgi/).
