@@ -20,7 +20,7 @@ RUN touch /app/cron.log
 EXPOSE 587
 
 # install python requirements
-COPY ./requirements.txt /app/requirements.txts
+COPY ./requirements.txt /app/requirements.txt
 RUN python -m pip install -r /app/requirements.txt
 
 # moce application data
