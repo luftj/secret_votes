@@ -27,13 +27,13 @@ def get_locale():
 
 def store_poll(question, email_addresses):
     # create "unique" poll id
-    poll_id = hashlib.md5((question + "".join(email_addresses) + str(random.randint(1,999))).encode("utf-8")).hexdigest()
+    poll_id = hashlib.sha224((question + "".join(email_addresses) + str(random.randint(1,999))).encode("utf-8")).hexdigest()
     # this poll might already exist, so seed with random number
 
     print("poll id", poll_id)
 
     # hash people for pseudonymisation
-    people_hashed = [hashlib.md5(p.encode("utf-8")).hexdigest() for p in email_addresses] # todo: move this to email sending, allow salt
+    people_hashed = [hashlib.sha224(p.encode("utf-8")).hexdigest() for p in email_addresses] # todo: move this to email sending, allow salt
 
     json_data = {"question" : question,
                 "people_hashes" : random.sample(people_hashed, len(people_hashed)),
@@ -216,7 +216,7 @@ def send_email(recipient, poll_url, question, num_votes=1):
     sender = environ.get('SMTP_FROM')
     receivers = [recipient]
 
-    email_hash = hashlib.md5((recipient).encode("utf-8")).hexdigest() # todo: this can be reconstructed, add salt 
+    email_hash = hashlib.sha224((recipient).encode("utf-8")).hexdigest() # todo: this can be reconstructed, add salt 
 
     # todo: the language of the email is now the language of the poll creator -> determine from TLD?
     message = """From: Voting System <%s>\r\nTo: %s\r\nSubject: %s %s\r\n
