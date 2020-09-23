@@ -13,6 +13,8 @@
         {% elif error_type=="already_voted" %}
             <label class="error">{{_("You already voted for this poll!")}}</label>
             <br>
+            <a href="{{result_url}}" class="btn btn-primary my-2" >{{_("Go to results")}}</a>
+            <br>
         {% endif %}
 
 {% endblock %}

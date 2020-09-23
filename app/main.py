@@ -123,6 +123,10 @@ def submit_vote():
         user_id = request.args.get("name", None)
         poll_id = request.args.get("poll_id", None)
     print(options,user_id, poll_id)
+
+    # create results url
+    url = "%sresult_%s?user=%s" % (request.url_root, poll_id, user_id)
+
     # todo: check invalid options
 
     # check if user is eligible for voting
@@ -139,7 +143,7 @@ def submit_vote():
 
     # check if user has already voted
     if user_id in vote_data["already_voted"]:
-        return render_template("error.html", error_type="already_voted")
+        return render_template("error.html", error_type="already_voted", result_url=url)
     
     # add vote
     print(options)
@@ -154,7 +158,6 @@ def submit_vote():
         json.dump(vote_data,file)
 
     # show results
-    url = "%sresult_%s?user=%s" % (request.url_root, poll_id, user_id)
     return render_template("vote_submitted.html", result_url=url)
 
 @app.route("/result_<poll_id>", methods=["GET","POST"])
@@ -227,8 +230,8 @@ def send_email(recipient, poll_url, question, num_votes=1):
     %s %s?user=%s
     %s %d %s.
     """ % (environ.get('SMTP_FROM'), recipient, _("You have been invited to participate to a poll regarding"), question, 
-            _("Click here to submit your vote:"), poll_url, email_hash,
-            _("You have"), num_votes, _("vote(s)"))
+            _("\nClick here to submit your vote:\n\n"), poll_url, email_hash,
+            _("\nYou have"), num_votes, _("vote(s)"))
 
     try:
         with smtplib.SMTP(environ.get('SMTP_HOST'), environ.get('SMTP_PORT')) as smtpObj:
