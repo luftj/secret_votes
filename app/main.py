@@ -234,8 +234,8 @@ def send_email(recipient, poll_url, question, num_votes=1):
         with smtplib.SMTP(environ.get('SMTP_HOST'), environ.get('SMTP_PORT')) as smtpObj:
             smtpObj.sendmail(sender, receivers, message.encode("utf-8"))
             print("Successfully sent email")
-    except smtplib.SMTPException:
-        print("Error: unable to send email")
+    except Exception as e:
+        print("Error: unable to send email", e)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",debug=True)
