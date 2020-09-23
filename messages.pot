@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-23 20:11+0200\n"
+"POT-Creation-Date: 2020-09-23 21:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,23 +21,19 @@ msgstr ""
 msgid "Enter one email address per line..."
 msgstr ""
 
-#: app/main.py:177
-msgid "you can only see results if you have already voted!"
-msgstr ""
-
-#: app/main.py:229
+#: app/main.py:233
 msgid "You have been invited to participate to a poll regarding"
 msgstr ""
 
-#: app/main.py:230
+#: app/main.py:234
 msgid "Click here to submit your vote:"
 msgstr ""
 
-#: app/main.py:231
+#: app/main.py:235
 msgid "You have"
 msgstr ""
 
-#: app/main.py:231
+#: app/main.py:235
 msgid "vote(s)"
 msgstr ""
 
@@ -47,6 +43,10 @@ msgstr ""
 
 #: app/templates/_layout.html:20
 msgid "About description"
+msgstr ""
+
+#: app/templates/_layout.html:23
+msgid "Contact"
 msgstr ""
 
 #: app/templates/_layout.html:25
@@ -103,7 +103,19 @@ msgid "This user is not eligible for voting here!"
 msgstr ""
 
 #: app/templates/error.html:14
+msgid "You can only see results if you have already voted!"
+msgstr ""
+
+#: app/templates/error.html:16
+msgid "Go to vote"
+msgstr ""
+
+#: app/templates/error.html:19
 msgid "You already voted for this poll!"
+msgstr ""
+
+#: app/templates/error.html:21 app/templates/vote_submitted.html:6
+msgid "Go to results"
 msgstr ""
 
 #: app/templates/homepage.html:6
@@ -176,9 +188,5 @@ msgstr ""
 
 #: app/templates/vote_submitted.html:5
 msgid "Your vote has been registered!"
-msgstr ""
-
-#: app/templates/vote_submitted.html:6
-msgid "Go to results"
 msgstr ""
 

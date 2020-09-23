@@ -177,7 +177,8 @@ def result(poll_id):
 
     # only show results, when user has already voted
     if not user in vote_data["already_voted"]:
-        return _("you can only see results if you have already voted!") # todo: return to vote
+        url = "%svote_%s?user=%s" % (request.url_root, poll_id, user)
+        return render_template("error.html", error_type="not_yet_voted", result_url=url)
 
     motion = vote_data["question"]
     num_yes = vote_data["num_yes"]
@@ -227,11 +228,11 @@ def send_email(recipient, poll_url, question, num_votes=1):
     # todo: the language of the email is now the language of the poll creator -> determine from TLD?
     message = """From: Voting System <%s>\r\nTo: %s\r\nSubject: %s %s\r\n
 
-    %s %s?user=%s
-    %s %d %s.
+    \n%s\n\n %s?user=%s
+    \n%s %d %s.
     """ % (environ.get('SMTP_FROM'), recipient, _("You have been invited to participate to a poll regarding"), question, 
-            _("\nClick here to submit your vote:\n\n"), poll_url, email_hash,
-            _("\nYou have"), num_votes, _("vote(s)"))
+            _("Click here to submit your vote:"), poll_url, email_hash,
+            _("You have"), num_votes, _("vote(s)"))
 
     try:
         with smtplib.SMTP(environ.get('SMTP_HOST'), environ.get('SMTP_PORT')) as smtpObj:

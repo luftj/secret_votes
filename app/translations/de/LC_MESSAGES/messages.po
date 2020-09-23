@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-23 20:11+0200\n"
+"POT-Creation-Date: 2020-09-23 21:20+0200\n"
 "PO-Revision-Date: 2020-09-19 17:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,23 +22,19 @@ msgstr ""
 msgid "Enter one email address per line..."
 msgstr "Bitte eine E-Mail-Adresse per Zeile eingeben..."
 
-#: app/main.py:177
-msgid "you can only see results if you have already voted!"
-msgstr "Sie können die Umfrageergebnisse erst nach einer Stimmenabgabe einsehen."
-
-#: app/main.py:229
+#: app/main.py:233
 msgid "You have been invited to participate to a poll regarding"
 msgstr "Sie wurden eingeladen, an folgender Abstimmung teilzunehmen:"
 
-#: app/main.py:230
+#: app/main.py:234
 msgid "Click here to submit your vote:"
-msgstr "Geben Sie hier Ihre Stimme ab:"
+msgstr "Folgen Sie diesem Link, um Ihre Stimme abzugeben:"
 
-#: app/main.py:231
+#: app/main.py:235
 msgid "You have"
 msgstr "Sie haben"
 
-#: app/main.py:231
+#: app/main.py:235
 msgid "vote(s)"
 msgstr "Stimme(n)"
 
@@ -48,7 +44,16 @@ msgstr "Über"
 
 #: app/templates/_layout.html:20
 msgid "About description"
-msgstr "..."
+msgstr ""
+"Secure Vote ist eine Plattform für eine anonyme und sichere Online-"
+"Abstimmung. Jede Person die abstimmen soll, wird mit der entsprechenden "
+"E-Mail im Textfeld hinterlegt. Hat eine Person mehr als eine Stimme, dann"
+" kann die E-Mail mehrmals angegeben werden. Die Person erhält dann "
+"jeweils separate E-Mails mit der Möglichkeit einer getrennten Abstimmung."
+
+#: app/templates/_layout.html:23
+msgid "Contact"
+msgstr "Kontakt"
 
 #: app/templates/_layout.html:25
 msgid "Data protection"
@@ -104,8 +109,20 @@ msgid "This user is not eligible for voting here!"
 msgstr "Dieser Benutzer darf hier nicht abstimmen!"
 
 #: app/templates/error.html:14
+msgid "You can only see results if you have already voted!"
+msgstr "Sie können die Umfrageergebnisse erst nach einer Stimmenabgabe einsehen."
+
+#: app/templates/error.html:16
+msgid "Go to vote"
+msgstr "Zur Abstimmung"
+
+#: app/templates/error.html:19
 msgid "You already voted for this poll!"
 msgstr "Sie haben bereits für diese Umfrage abgestimmt!"
+
+#: app/templates/error.html:21 app/templates/vote_submitted.html:6
+msgid "Go to results"
+msgstr "Zu den Ergebnissen"
 
 #: app/templates/homepage.html:6
 msgid "Create new poll"
@@ -178,8 +195,4 @@ msgstr "Stimme abgeben"
 #: app/templates/vote_submitted.html:5
 msgid "Your vote has been registered!"
 msgstr "Ihre Stimme wurde entgegen genommen!"
-
-#: app/templates/vote_submitted.html:6
-msgid "Go to results"
-msgstr "Zu den Ergebnissen"
 

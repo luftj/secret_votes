@@ -10,6 +10,11 @@
         {% elif error_type=="invalid_user_id" %}
             <label class="error">{{_("This user is not eligible for voting here!")}}</label>
             <br>
+        {% elif error_type=="not_yet_voted" %}
+            <label class="error">{{_("You can only see results if you have already voted!")}}</label>
+            <br>
+            <a href="{{result_url}}" class="btn btn-primary my-2" >{{_("Go to vote")}}</a>
+            <br>
         {% elif error_type=="already_voted" %}
             <label class="error">{{_("You already voted for this poll!")}}</label>
             <br>
