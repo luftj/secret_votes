@@ -53,10 +53,15 @@ To see the results:
 You are only allowed to see the results, after you have given a vote.
 
 ## To do
-* prettier front end
 * block result viewing for specific time or until number of votes reached
 * salt email hashes so they can't be found from email alone
 * set language of email by looking at tld
 * add observers, that can view results without voting
 * possibility to change the possible answers for the vote
 * add option to create form, whether to list emails in plain text in result
+* download bootstrap/etc with container creation, don't leak user data to twitter cdn
+* localise layout
+* option for vote end time
+* send email to poll creater, when voting is done
+* put meta (disclaimer, etc) links in cfg or something
+* favicon

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-20 17:29+0200\n"
+"POT-Creation-Date: 2020-09-23 20:11+0200\n"
 "PO-Revision-Date: 2020-09-19 17:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,140 +18,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app/main.py:87
+#: app/main.py:90
 msgid "Enter one email address per line..."
 msgstr "Bitte eine E-Mail-Adresse per Zeile eingeben..."
 
-#: app/main.py:174
+#: app/main.py:177
 msgid "you can only see results if you have already voted!"
 msgstr "Sie können die Umfrageergebnisse erst nach einer Stimmenabgabe einsehen."
 
-#: app/main.py:226
+#: app/main.py:229
 msgid "You have been invited to participate to a poll regarding"
 msgstr "Sie wurden eingeladen, an folgender Abstimmung teilzunehmen:"
 
-#: app/main.py:227
+#: app/main.py:230
 msgid "Click here to submit your vote:"
 msgstr "Geben Sie hier Ihre Stimme ab:"
 
-#: app/main.py:228
+#: app/main.py:231
 msgid "You have"
 msgstr "Sie haben"
 
-#: app/main.py:228
+#: app/main.py:231
 msgid "vote(s)"
 msgstr "Stimme(n)"
 
-#: app/templates/create_new_poll.html:6
+#: app/templates/_layout.html:19
+msgid "About"
+msgstr "Über"
+
+#: app/templates/_layout.html:20
+msgid "About description"
+msgstr "..."
+
+#: app/templates/_layout.html:25
+msgid "Data protection"
+msgstr "Datenschutzerklärung"
+
+#: app/templates/_layout.html:26
+msgid "Imprint"
+msgstr "Impressum"
+
+#: app/templates/_layout.html:27
+msgid "Source code"
+msgstr ""
+
+#: app/templates/_layout.html:38
+msgid "Secure vote"
+msgstr ""
+
+#: app/templates/create_new_poll.html:4 app/templates/homepage.html:4
 msgid "Create new poll:"
 msgstr "Neue Abstimmung erstellen:"
 
-#: app/templates/create_new_poll.html:9
-#: app/templates/result_view_with_names.html:8 app/templates/vote_poll.html:10
+#: app/templates/create_new_poll.html:7
+#: app/templates/result_view_with_names.html:7 app/templates/vote_poll.html:9
 msgid "Motion:"
 msgstr "Frage:"
 
-#: app/templates/create_new_poll.html:11
+#: app/templates/create_new_poll.html:9
 msgid "Please enter what to vote on"
 msgstr "Bitte geben Sie eine Frage ein"
 
-#: app/templates/create_new_poll.html:15
+#: app/templates/create_new_poll.html:13
 msgid "Eligible voters (max. 150):"
 msgstr "E-Mail Adressen aller Teilnehmer (max. 150):"
 
-#: app/templates/create_new_poll.html:17
+#: app/templates/create_new_poll.html:15
 msgid "You entered an invalid e-mail address"
 msgstr "Sie haben eine ungültige E-Mail Adresse eingegeben"
 
-#: app/templates/create_new_poll.html:20
+#: app/templates/create_new_poll.html:18
 msgid "Submit"
 msgstr "Erstellen"
 
-#: app/templates/error.html:7
+#: app/templates/error.html:5
 msgid "Something went wrong!"
 msgstr "Da ist etwas schief gelaufen!"
 
-#: app/templates/error.html:10
+#: app/templates/error.html:8
 msgid "Could not find a poll with this ID!"
 msgstr "Diese Abstimmung wurde nicht gefunden!"
 
-#: app/templates/error.html:13
+#: app/templates/error.html:11
 msgid "This user is not eligible for voting here!"
 msgstr "Dieser Benutzer darf hier nicht abstimmen!"
 
-#: app/templates/error.html:16
+#: app/templates/error.html:14
 msgid "You already voted for this poll!"
 msgstr "Sie haben bereits für diese Umfrage abgestimmt!"
 
-#: app/templates/poll_created.html:6
+#: app/templates/homepage.html:6
+msgid "Create new poll"
+msgstr "Neue Abstimmung erstellen"
+
+#: app/templates/poll_created.html:5
 msgid "Your poll has been created!"
 msgstr "Ihre Abstimmung wurde erfolgreich erstellt!"
 
-#: app/templates/poll_created.html:7
+#: app/templates/poll_created.html:6
 msgid "Emails have been sent to all voters."
 msgstr "Alle Teilnehmer haben eine E-Mail erhalten"
 
-#: app/templates/result_view_with_names.html:6
+#: app/templates/result_view_with_names.html:5
 msgid "Results for poll:"
 msgstr "Ergebnisse der Abstimmung:"
 
-#: app/templates/result_view_with_names.html:10
+#: app/templates/result_view_with_names.html:9
 msgid "Number of votes:"
 msgstr "Anzahl der Gesamtstimmen:"
 
-#: app/templates/result_view_with_names.html:11
+#: app/templates/result_view_with_names.html:10
 msgid "Number Yay:"
 msgstr "Anzahl dafür:"
 
-#: app/templates/result_view_with_names.html:12
+#: app/templates/result_view_with_names.html:11
 msgid "Number Nay:"
 msgstr "Anzahl dagegen:"
 
-#: app/templates/result_view_with_names.html:13
+#: app/templates/result_view_with_names.html:12
 msgid "Number abstained:"
 msgstr "Anzahl der Enthaltungen:"
 
-#: app/templates/result_view_with_names.html:14
+#: app/templates/result_view_with_names.html:13
 msgid "Number not voted:"
 msgstr "Anzahl der nicht abgegebenen Stimmen:"
 
-#: app/templates/result_view_with_names.html:17
+#: app/templates/result_view_with_names.html:16
 msgid "These people were eligible for voting (total votes:"
 msgstr "Dies waren die stimmberechtigten Teilnehmer (Gesamt:"
 
-#: app/templates/result_view_with_names.html:20
+#: app/templates/result_view_with_names.html:19
 msgid "votes"
 msgstr "Stimmen"
 
-#: app/templates/vote_poll.html:6
+#: app/templates/vote_poll.html:5
 msgid "Vote for poll:"
 msgstr "Geben Sie Ihre Stimme ab:"
 
-#: app/templates/vote_poll.html:13
+#: app/templates/vote_poll.html:12
 msgid "Options:"
 msgstr "Stimmmöglichkeiten:"
 
-#: app/templates/vote_poll.html:15
+#: app/templates/vote_poll.html:14
 msgid "Approve"
 msgstr "Zustimmen"
 
-#: app/templates/vote_poll.html:17
+#: app/templates/vote_poll.html:16
 msgid "Reject"
 msgstr "Ablehnen"
 
-#: app/templates/vote_poll.html:19
+#: app/templates/vote_poll.html:18
 msgid "abstain"
 msgstr "Enthalten"
 
-#: app/templates/vote_poll.html:24
+#: app/templates/vote_poll.html:20
 msgid "Submit vote"
 msgstr "Stimme abgeben"
 
-#: app/templates/vote_submitted.html:6
+#: app/templates/vote_submitted.html:5
 msgid "Your vote has been registered!"
 msgstr "Ihre Stimme wurde entgegen genommen!"
 
-#: app/templates/vote_submitted.html:7
+#: app/templates/vote_submitted.html:6
 msgid "Go to results"
 msgstr "Zu den Ergebnissen"
 
