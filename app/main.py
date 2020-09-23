@@ -15,7 +15,8 @@ LANGUAGES = ['en', 'de']
 
 @app.route('/')
 def root():
-    return redirect(url_for('create_poll'))
+    # show homepage
+    return render_template("homepage.html")
 
 @app.route('/test')
 def test():
@@ -84,6 +85,7 @@ def submit_poll():
 
 @app.route('/create', methods=["POST","GET"])
 def create_poll():
+
     # show creation site
     return render_template("create_new_poll.html", people=_("Enter one email address per line..."))
 
