@@ -1,8 +1,7 @@
-<!doctype html>
-<html>
-   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-   <body>
-   
+{% extends "_layout.html" %}
+
+{% block content %}
+
       <h1>{{ _("Vote for poll:") }}</h1>
 
       <form action="submit_vote" method = "post">
@@ -23,6 +22,5 @@
 
          <input type="submit" name="submit" value="{{_("Submit vote")}}" >
       </form>
-      
-   </body>
-</html>
+
+{% endblock %}

@@ -1,7 +1,6 @@
-<!doctype html>
-<html>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <body>
+{% extends "_layout.html" %}
+
+{% block content %}
 
         <h1>{{_("Results for poll:")}}</h1>
 
@@ -19,5 +18,5 @@
         {% for email,votes in people %}
             <label> {{email}} ({{_("votes")}}: {{votes}}) </label><br/>
         {% endfor %}
-    </body>
-</html>
+
+{% endblock %}

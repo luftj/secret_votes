@@ -1,16 +1,10 @@
-html {
-    font-family: sans-serif;
-    background: #eee;
-    padding: 1rem; 
-}
-
 .error {
     color: red;
 }
 
 textarea {
     overflow-y: scroll;
-    height: 200px;
+    height: 300px;
 }
 
 input[readonly] {

@@ -1,8 +1,6 @@
-<!doctype html>
-<html>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "_layout.html" %}
 
-    <body>
+{% block content %}
 
         <h1>{{_("Something went wrong!")}}</h1>
 
@@ -17,6 +15,4 @@
             <br>
         {% endif %}
 
-    </body>
-
-</html>
+{% endblock %}

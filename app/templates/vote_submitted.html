@@ -1,10 +1,8 @@
-<!doctype html>
-<html>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <body>
+{% extends "_layout.html" %}
+
+{% block content %}
 
         <h1>{{_("Your vote has been registered!")}}</h1>
         <a href="{{result_url}}">{{_("Go to results")}}</a>
         
-    </body>
-</html>
+{% endblock %}

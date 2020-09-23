@@ -1,24 +1,20 @@
-<!doctype html>
-<html>
-   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-   <body>
-   
+{% extends "_layout.html" %}
+
+{% block content %}
       <h1>{{_("Create new poll:")}}</h1>
 
       <form action="submit_new_poll" method = "post">
-         <label for="question">{{ _("Motion:") }}</label><br>
+         <label class="lead text-muted" for="question">{{ _("Motion:") }}</label><br>
          {% if invalid_question %}
-            <label class="error" >{{_("Please enter what to vote on")}}</label><br>
+            <label class="lead error" >{{_("Please enter what to vote on")}}</label><br>
          {% endif %}
          <input type="text" id="question" name="question" value={{question}}><br><br>
-
-         <label for="people">{{_("Eligible voters (max. 150):")}}</label><br>
+      
+         <label class="lead text-muted" for="people">{{_("Eligible voters (max. 150):")}}</label><br>
          {% if invalid_mail %}
-            <label class="error" >{{_("You entered an invalid e-mail address")}}</label><br>
+            <label class="lead error" >{{_("You entered an invalid e-mail address")}}</label><br>
          {% endif %}
          <textarea rows="150" cols="50" name="people">{{people}}</textarea><br>
-         <input type="submit" name="submit" value="{{_("Submit")}}" >
+         <input type="submit" class="btn btn-primary my-2" name="submit" value="{{_("Submit")}}" >
       </form>
-      
-   </body>
-</html>
+{% endblock %}

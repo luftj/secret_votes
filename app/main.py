@@ -6,9 +6,10 @@ from os import environ
 import smtplib
 import re
 from flask_babel import Babel, _
-
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap(app)
 babel = Babel(app)
 LANGUAGES = ['en', 'de']
 
