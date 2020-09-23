@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-23 21:20+0200\n"
+"POT-Creation-Date: 2020-09-23 22:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Data protection"
 msgstr ""
 
-#: app/templates/_layout.html:26
+#: app/templates/_layout.html:26 app/templates/imprint.html:4
 msgid "Imprint"
 msgstr ""
 
@@ -88,6 +88,14 @@ msgstr ""
 
 #: app/templates/create_new_poll.html:18
 msgid "Submit"
+msgstr ""
+
+#: app/templates/datapolicy.html:4
+msgid "Data protection declaration"
+msgstr ""
+
+#: app/templates/datapolicy.html:6 app/templates/imprint.html:6
+msgid "This is a test server and not intended for public use."
 msgstr ""
 
 #: app/templates/error.html:5

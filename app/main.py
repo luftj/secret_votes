@@ -241,5 +241,19 @@ def send_email(recipient, poll_url, question, num_votes=1):
     except Exception as e:
         print("Error: unable to send email", e)
 
+@app.route("/data_protection")
+def data_protection():
+    if environ.get('URL_DATAPOLICY'):
+        return redirect(environ.get('URL_DATAPOLICY'))
+    else:
+        return render_template("datapolicy.html")
+
+@app.route("/imprint")
+def imprint():
+    if environ.get('URL_IMPRINT'):
+        return redirect(environ.get('URL_IMPRINT'))
+    else:
+        return render_template("imprint.html")
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0",debug=True)
